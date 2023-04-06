@@ -18,7 +18,7 @@ Choosing the "Check out a book" option will prompt the user to enter the title o
 Choosing the "Return a book" option will prompt the user to enter the title of the book they wish to return. The program will then search for the book and mark it as returned.
 
 **Process Returns**
-Choosing the "Process returns" option will process all returned books that are waiting to be processed. If a book has been returned more than 10 times, it will be recycled. If a book's condition is less than 5, it will also be recycled. Otherwise, the book will be marked as "On Shelf" and returned to the library system.
+Choosing the "Process returns" option will process all returned books that are waiting to be processed. If a book has been returned 10 times, it will be recycled. Otherwise, the book will be marked as "On Shelf" and returned to the library system.
 
 **Book Class**
 The Book class is used to create book objects with the following attributes:
