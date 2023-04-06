@@ -28,6 +28,6 @@ The Book class is used to create book objects with the following attributes:
 * status: the status of the book, either "On Shelf", "Checked Out", or "Returned"
 * condition: the condition of the book, on a scale of 1-10
 * due_date: the due date for the book, if it has been checked out
-* return_count: the number of times the book has been returned
+
 ![image](https://user-images.githubusercontent.com/125928129/229922077-b94ed488-7ec5-41d1-b35f-81cde1786e8f.png)
 
