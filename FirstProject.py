@@ -114,8 +114,10 @@ def return_book():
 
 
 def process_returns():
-    while returned_books:
-        returned_book = returned_books
+    if not returned_books:
+        print('Please return the book you have checked out first.')
+    else:
+        returned_book = returned_books.pop()
         if returned_book.condition < 1:
             print(f'The book "{returned_book.title}" has been recycled due to excessive wear and tear.')
             books.remove(returned_book)
