@@ -8,7 +8,7 @@ class Book:
         self.status = 'On Shelf'
         self.condition = condition
         self.due_date = None
-        self.return_count = 0
+
 
     def __str__(self):
         return f'{self.title} by {self.author} ({self.status})'
@@ -31,7 +31,7 @@ books = [
     Book('The Great Gatsby', 'F. Scott Fitzgerald', 10),
     Book('To Kill a Mockingbird', 'Harper Lee', 10),
     Book('1984', 'George Orwell', 10),
-    Book('Pride and Prejudice', 'Jane Austen', 5),
+    Book('Pride and Prejudice', 'Jane Austen', 1),
     Book('The Catcher in the Rye', 'J.D. Salinger', 7),
     Book('One Hundred Years of Solitude', 'Gabriel Garcia Marquez', 6),
     Book('Brave New World', 'Aldous Huxley', 5),
@@ -47,8 +47,7 @@ checked_out_books = []
 
 
 def display_books():
-    all_books = books + returned_books
-    for i, book in enumerate(all_books):
+    for i, book in enumerate(books):
         print(i + 1, book)
 
 
@@ -56,7 +55,7 @@ def search_by_author():
     found_author = False
     while not found_author:
         author = input('Enter the name of the author: ')
-        found_books = [book for book in books if book.author == author]
+        found_books = [book for book in books if book.author.lower() == author.lower()]
         if found_books:
             for book in found_books:
                 print(book)
@@ -84,7 +83,7 @@ def check_out_book():
         title = input('Enter the title of the book you would like to check out: ')
         found_book = None
         for book in books:
-            if book.title == title:
+            if book.title.lower() == title.lower():
                 found_book = book
                 break
         if found_book:
@@ -99,7 +98,7 @@ def return_book():
     title = input('Enter the title of the book you are returning: ')
     found_book = None
     for book in books:
-        if book.title == title:
+        if book.title.lower() == title.lower():
             found_book = book
             break
     if found_book:
@@ -116,7 +115,7 @@ def return_book():
 
 def process_returns():
     while returned_books:
-        returned_book = returned_books.pop()
+        returned_book = returned_books
         if returned_book.condition < 1:
             print(f'The book "{returned_book.title}" has been recycled due to excessive wear and tear.')
             books.remove(returned_book)
