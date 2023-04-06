@@ -125,6 +125,7 @@ def process_returns():
             print(
                 f'The book "{returned_book.title}" is now back on the shelf. Current condition: {returned_book.condition}/10')
 
+
 def main_menu():
     while True:
         print('1. Display all books')
@@ -189,3 +190,14 @@ def go_to_main_menu():
 print('Welcome to the Library System')
 print('Please choose an option from the following menu: ')
 main_menu()
+
+# Testing Functions
+print('checked out books')
+for index, book in enumerate(checked_out_books):
+    print(f'{index + 1}, {book.title} {book.status}')
+print('Returned books')
+for index, book in enumerate(returned_books):
+    print(f'{index + 1}, {book.title} {book.status}')
+print('Book list')
+for index, book in enumerate(books):
+    print(f'{index + 1}, {book.title} {book.status}')
